@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone 17 Pro – Premium Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle at top, #222, #000);
+}
+
+/* ===== CARD ===== */
+.card{
+  position:relative;
+  width:400px;              /* Increased size */
+  height:600px;
+  background:#181818;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 50px 100px rgba(0,0,0,.7);
+}
+
+/* Animated background */
+.card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  clip-path:circle(180px at 80% 10%);
+  transition:.6s ease;
+}
+.card:hover::before{
+  clip-path:circle(500px at 80% -20%);
+}
+
+/* Big watermark text */
+.card::after{
+  content:'iPhone';
+  position:absolute;
+  top:38%;
+  left:-28%;
+  font-size:10em;
+  font-weight:800;
+  font-style:italic;
+  color:rgba(255,255,255,.05);
+}
+
+/* ===== IMAGE ===== */
+.imgBx{
+  position:absolute;
+  top:48%;
+  width:100%;
+  transform:translateY(-50%);
+  transition:.6s ease;
+  z-index:5;
+}
+
+.card:hover .imgBx{
+  top:18%;                  /* smoother movement */
+}
+
+.imgBx img{
+  width:260px;              /* bigger image */
+  display:block;
+  margin:auto;
+  filter:drop-shadow(0 30px 35px rgba(0,0,0,.7));
+  animation:float 4s ease-in-out infinite;
+}
+
+/* Floating animation (refined) */
+@keyframes float{
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-12px) rotate(-4deg); }
+}
+
+/* ===== CONTENT ===== */
+.contentBx{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:140px;
+  text-align:center;
+  padding:15px;
+  color:#fff;
+  transition:1s;
+}
+.card:hover .contentBx{
+  height:340px;
+}
+
+/* Title */
+.contentBx h2{
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* Details */
+.details{
+  font-size:14px;
+  opacity:0;
+  transition:.5s;
+}
+.card:hover .details{
+  opacity:1;
+  transition-delay:.4s;
+}
+.details p{
+  margin:8px 0;
+  color:#ddd;
+}
+
+/* Storage & Color */
+.options{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:14px 0;
+  opacity:0;
+  transition:.5s;
+}
+.card:hover .options{
+  opacity:1;
+  transition-delay:.6s;
+}
+
+.options span{
+  padding:7px 14px;
+  background:#fff;
+  color:#000;
+  border-radius:8px;
+  font-size:13px;
+  cursor:pointer;
+  transition:.3s;
+}
+.options span:hover{
+  background:#00c6ff;
+  color:#fff;
+  transform:scale(1.1);
+}
+
+/* Color dots */
+.colors span{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:inline-block;
+  cursor:pointer;
+  border:2px solid #fff;
+}
+
+/* ===== BUTTON ===== */
+.buy-btn{
+  margin-top:20px;
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.5s;
+  box-shadow:0 12px 35px rgba(0,114,255,.6);
+}
+.card:hover .buy-btn{
+  opacity:1;
+  transform:translateY(0);
+  transition-delay:.9s;
+}
+.buy-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 25px 60px rgba(0,114,255,.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="imgBx">
+    <img src="iPhone 17 Pro Max.jpg" alt="iPhone 17 Pro">
+  </div>
+
+  <div class="contentBx">
+    <h2>iPhone 17 PRO Max</h2>
+
+    <div class="details">
+      <p>⚡ A19 Bionic Chip</p>
+      <p>📸 48MP Pro Camera System</p>
+      <p>🔋 30hr Battery Life</p>
+      <p>📱 6.7" ProMotion XDR Display</p>
+    </div>
+
+    <div class="options">
+      <span>256GB</span>
+      <span>512GB</span>
+      <span>1TB</span>
+    </div>
+
+    <div class="options colors">
+      <span style="background:#222"></span>
+      <span style="background:#9bdc28"></span>
+      <span style="background:#03a9f4"></span>
+      <span style="background:#e91e63"></span>
+    </div>
+
+    <a href="#" class="buy-btn">Buy Now</a>
+  </div>
+
+</div>
+
+</body>
+</html>
